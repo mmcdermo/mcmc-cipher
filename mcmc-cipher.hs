@@ -240,15 +240,6 @@ vignereMCMC rg cipherFile englishLetterFreqs wapngrams2 chainLength = do
 --  mapM_  iocKey [1..40]
   let z = last $ sortBy sndSort $ map (\x -> (x, indexOfCoincidenceKey cipherText x)) [1..20]
   putStrLn $ "Highest IOC in first 20: " ++ show z
-  putStrLn $ "Code Test"
-  let plaintext = "ATTACKATDAWN"
-  let key = "AXFGVFBEKUUH"
---  let cipherText = codeVG (+) (T.pack plaintext) key
-  let decrypted = codeVG (-) cipherText key
-  putStrLn $ "Plaintext:\t\t " ++ plaintext
-  putStrLn $ "Key \t\t: "++key
-  putStrLn $ "cipherText \t\t: "++ T.unpack cipherText
-  putStrLn $ "decrypted \t\t: "++ T.unpack decrypted
   putStrLn $ "\n\nRunning MCMC"
   let state0 = take (fst z) $ repeat 'A'
   
