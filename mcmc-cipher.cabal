@@ -1,0 +1,21 @@
+name:           mcmc-cipher
+version:        0.1
+synopsis:       Markov Chain Monte Carlo Cipher Breaker
+homepage:       willhaveonesoon.com
+author:         Morgan McDermott
+license:        AllRightsReserved
+build-type:     Simple
+Cabal-Version:       >=1.2
+
+executable mcmc-cipher
+  main-is:        mcmc-cipher.hs
+  hs-source-dirs: .         
+  ghc-options: -O2 -no-recomp -with-rtsopts=-K1G
+
+library
+  build-depends:  base
+                  , text
+                  , containers
+                  , unordered-containers
+                  , mersenne-random
+  ghc-options: -O2 -no-recomp 
